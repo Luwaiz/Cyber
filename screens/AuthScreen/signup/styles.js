@@ -9,20 +9,26 @@ export const styles = StyleSheet.create({
     title: {
         fontSize: 24,
         fontWeight: 'bold',
-        
     },
     headerContainer:{
         marginTop: 20,
-        marginBottom: 20,
+        marginBottom: 80,
         marginHorizontal:30,
     },
     subTitle: {
         fontWeight: 'regular',
-        marginTop: 10,
+        marginTop: 20,
         fontSize: 16,
     },
     LoginText:{
         fontWeight: "800",
         color:colors.primaryBlue
+    },
+    input:{
+        paddingHorizontal: 20,
+    },
+    button:{
+        paddingHorizontal: 20,
+        marginTop:50
     }
 })
