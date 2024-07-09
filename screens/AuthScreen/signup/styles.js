@@ -16,12 +16,6 @@ export const styles = StyleSheet.create({
         marginHorizontal:30,
 
     },
-    button: {
-        backgroundColor: '#007bff',
-        padding: 10,
-        borderRadius: 5,
-        marginTop: 20,
-    },
     subTitle: {
         fontWeight: 'regular',
         marginTop: 10,
