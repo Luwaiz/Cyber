@@ -14,7 +14,6 @@ export const styles = StyleSheet.create({
         marginTop: 20,
         marginBottom: 20,
         marginHorizontal:30,
-
     },
     subTitle: {
         fontWeight: 'regular',
