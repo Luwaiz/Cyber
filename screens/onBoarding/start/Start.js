@@ -50,7 +50,7 @@ const Start = ({ navigation }) => {
 				<Animated.View style={[styles.Circle, animatedStyle]} />
 			</View>
 			<View style={styles.button}>
-				<BlueButton title={"Get Started"} onPress={ToPreference}/>
+				<BlueButton title={"Get Started"} onPress={ToPreference} />
 				<WhiteButton title={"Already have an account"} />
 			</View>
 		</SafeAreaView>

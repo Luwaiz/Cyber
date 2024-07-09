@@ -1,27 +1,32 @@
-import {
-	Dimensions,
-	View,
-} from "react-native";
+import { Dimensions, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { colors } from "../constants/styling";
-// import NavHeader from "../components/NavHeader";
 import Dashboard from "../screens/AppScreen/dashboard/Dashboard";
 import Courses from "../screens/AppScreen/courses/Courses";
 import Progress from "../screens/AppScreen/progress/Progress";
 import Settings from "../screens/AppScreen/settings/Settings";
 import Profile from "../screens/AppScreen/Profile/Profile";
+import Board from "../assets/svg/dashboard.svg";
+import BoardBlack from "../assets/svg/dashboard_black.svg";
+import PersonBlack from "../assets/svg/person.svg";
+import Person from "../assets/svg/person_black.svg";
+import BookBlack from "../assets/svg/book.svg";
+import ProgressBlack from "../assets/svg/progress.svg";
+import Book from "../assets/svg/book_black.svg";
+
 const { width, height } = Dimensions.get("screen");
 
 const Tab = createBottomTabNavigator();
 const HomeTab = () => {
 	return (
 		<Tab.Navigator
-			screenOptions={({ route }) => ({
+			screenOptions={({ route, focused }) => ({
 				headerShadowVisible: false,
-				
+				tabBarLabelStyle: { color: focused ? "green" : "black" },
+				headerShown:false
 			})}
 		>
 			<Tab.Screen
@@ -31,9 +36,9 @@ const HomeTab = () => {
 					tabBarIcon: ({ focused }) => (
 						<View>
 							{focused ? (
-								<Ionicons name="home" size={26} color={colors.primaryColor} />
+								<Board width={30} height={30} />
 							) : (
-								<Ionicons name="home-outline" size={24} color={"grey"} />
+								<BoardBlack width={25} height={25} />
 							)}
 						</View>
 					),
@@ -44,17 +49,7 @@ const HomeTab = () => {
 				component={Courses}
 				options={{
 					tabBarIcon: ({ focused }) => (
-						<View>
-							{focused ? (
-								<Ionicons
-									name="chatbox"
-									size={26}
-									color={colors.primaryColor}
-								/>
-							) : (
-								<Ionicons name="chatbox-outline" size={24} color={"grey"} />
-							)}
-						</View>
+						<View>{focused ? <Book width={27} height={27}/> : <BookBlack />}</View>
 					),
 				}}
 			/>
@@ -63,13 +58,7 @@ const HomeTab = () => {
 				component={Progress}
 				options={{
 					tabBarIcon: ({ focused }) => (
-						<View>
-							{focused ? (
-								<MaterialCommunityIcons name="account-group" size={28} color={colors.primaryColor} />
-							) : (
-								<MaterialCommunityIcons name="account-group-outline" size={26} color="grey" />
-							)}
-						</View>
+						<View>{focused ? <ProgressBlack /> : <ProgressBlack />}</View>
 					),
 				}}
 			/>
@@ -83,7 +72,7 @@ const HomeTab = () => {
 								<Ionicons
 									name="settings"
 									size={26}
-									color={colors.primaryColor}
+									color={colors.primaryBlue}
 								/>
 							) : (
 								<Ionicons name="settings-outline" size={24} color={"grey"} />
@@ -92,20 +81,16 @@ const HomeTab = () => {
 					),
 				}}
 			/>
-						<Tab.Screen
+			<Tab.Screen
 				name="Profile"
 				component={Profile}
 				options={{
 					tabBarIcon: ({ focused }) => (
 						<View>
 							{focused ? (
-								<Ionicons
-									name="settings"
-									size={26}
-									color={colors.primaryColor}
-								/>
+								<Person width={25} height={25} />
 							) : (
-								<Ionicons name="settings-outline" size={24} color={"grey"} />
+								<PersonBlack width={20} height={20} />
 							)}
 						</View>
 					),
@@ -116,4 +101,3 @@ const HomeTab = () => {
 };
 
 export default HomeTab;
-
