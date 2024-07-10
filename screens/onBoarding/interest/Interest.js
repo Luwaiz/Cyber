@@ -6,9 +6,9 @@ import { styles } from "./styles";
 
 const Interest = () => {
 	return (
-		<View>
+		<>
 			<FlatList data={interest} renderItem={renderItem} />
-		</View>
+		</>
 	);
 };
 const renderItem = ({ item }) => {

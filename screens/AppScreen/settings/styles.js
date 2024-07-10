@@ -1,11 +1,15 @@
 import { StyleSheet } from "react-native";
+import { colors } from "../../../constants/styling";
 
 export const styles = StyleSheet.create({
     container:{
         flex: 1,
-        backgroundColor: '#F8F9',
+        backgroundColor: colors.primaryWhite,
         padding: 20,
-        justifyContent: 'center',
-        alignItems: 'center'
+    },
+    sectionTitle:{
+        fontSize: 18,
+        fontWeight: 'bold',
+        marginBottom: 20,
     }
 })

@@ -6,19 +6,19 @@ export const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: colors.primaryWhite,
         justifyContent: 'center',
-        alignItems: 'center'
     },
     horizontal:{
-        padding: 20,
+        paddingBottom: 20,
+        paddingLeft: 20,
         gap:10,
-        marginBottom:50
+        marginBottom:40
     },
     vertical:{
         gap: 10,
         alignItems: 'center'
     },
     sectionTitle:{
-        fontSize: 20,
+        fontSize: 18,
         fontWeight: 'bold',
         marginBottom: 20,
         marginLeft:20

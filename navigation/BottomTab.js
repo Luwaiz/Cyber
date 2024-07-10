@@ -1,8 +1,7 @@
-import { Dimensions, View } from "react-native";
+import { Dimensions, Text, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { colors } from "../constants/styling";
 import Dashboard from "../screens/AppScreen/dashboard/Dashboard";
 import Courses from "../screens/AppScreen/courses/Courses";
@@ -16,6 +15,7 @@ import Person from "../assets/svg/person_black.svg";
 import BookBlack from "../assets/svg/book.svg";
 import ProgressBlack from "../assets/svg/progress.svg";
 import Book from "../assets/svg/book_black.svg";
+import NavHeader from "../components/NavHeader";
 
 const { width, height } = Dimensions.get("screen");
 
@@ -25,8 +25,21 @@ const HomeTab = () => {
 		<Tab.Navigator
 			screenOptions={({ route, focused }) => ({
 				headerShadowVisible: false,
-				tabBarLabelStyle: { color: focused ? "green" : "black" },
-				headerShown:false
+				tabBarLabel: ({focused }) => {
+					return (
+						<Text
+							style={{
+								color: focused ? colors.primaryBlue : colors.TextGrey1,
+								fontSize: 12,
+                                textAlign: "center",
+							}}
+						>
+							{route.name}
+						</Text>
+					);
+				},
+				header: () => <NavHeader title={route.name} />,
+				
 			})}
 		>
 			<Tab.Screen
@@ -45,11 +58,13 @@ const HomeTab = () => {
 				}}
 			/>
 			<Tab.Screen
-				name="Courses"
+				name="Course"
 				component={Courses}
 				options={{
 					tabBarIcon: ({ focused }) => (
-						<View>{focused ? <Book width={27} height={27}/> : <BookBlack />}</View>
+						<View>
+							{focused ? <Book width={27} height={27} /> : <BookBlack />}
+						</View>
 					),
 				}}
 			/>
@@ -70,12 +85,12 @@ const HomeTab = () => {
 						<View>
 							{focused ? (
 								<Ionicons
-									name="settings"
+									name="settings-outline"
 									size={26}
 									color={colors.primaryBlue}
 								/>
 							) : (
-								<Ionicons name="settings-outline" size={24} color={"grey"} />
+								<Ionicons name="settings-outline" size={24} color={"black"} />
 							)}
 						</View>
 					),

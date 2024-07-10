@@ -5,10 +5,10 @@ import { styles } from './styles';
 
 const Scheme = () => {
   return (
-    <View>
+    <>
     <Text style={styles.subTitle}>What you should expect to learn</Text>
       <FlatList renderItem={renderItem} data={interest}/>
-    </View>
+    </>
   )
 }
 const renderItem = ({ item }) => {

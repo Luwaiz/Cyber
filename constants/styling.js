@@ -1,5 +1,7 @@
 export const colors = {
     primaryBlue:"#040F73",
+    secondaryBlue:"#3045FF",
+    tertiaryBlue:"#051654",
     primaryWhite:"#FFFFFF",
     TextGrey1:"#5D5D5D",
     Grey1:"#ECECEC", // for borders

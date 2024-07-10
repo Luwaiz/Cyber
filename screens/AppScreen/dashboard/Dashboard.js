@@ -21,9 +21,8 @@ const Dashboard = () => {
 
 	return (
 		<SafeAreaView style={styles.container}>
-			<ScrollView
-				showsVerticalScrollIndicator={false}
-			>
+			<ScrollView  showsVerticalScrollIndicator={false}>
+			<Text style={styles.sectionTitle}>My courses</Text>
 				<ScrollView
 					horizontal
 					contentContainerStyle={styles.horizontal}
@@ -33,10 +32,10 @@ const Dashboard = () => {
 					<BlueBox />
 					<BlueBox />
 				</ScrollView>
-				<Text style={styles.sectionTitle}>Suggestions</Text>
+				<Text style={styles.sectionTitle}>Suggested courses</Text>
 				<View style={styles.vertical}>
 					{interest.map((item, index) => (
-						<Suggestions item={item} index={index} />
+						<Suggestions key={index} item={item} index={index} />
 					))}
 				</View>
 			</ScrollView>
