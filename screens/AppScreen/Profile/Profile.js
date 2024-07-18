@@ -6,11 +6,40 @@ import { styles } from "./styles";
 import Secure from "../../../assets/svg/secure.svg";
 import Resource from "../../../assets/svg/resource.svg";
 import Certificate from "../../../assets/svg/certificate.svg";
+import BlueButton from "../../../components/BlueButton";
 
-const Profile = ({navigation}) => {
-	const navigateToSettings=()=>{
-		navigation.navigate("Settings")
+const Profile = ({ navigation }) => {
+	const navigateToSettings = () => {
+		navigation.navigate("Settings");
+	};
+	const navigateToResource = () => {
+		navigation.navigate("Resources");
+	};
+	const LogOut = () => {
+		navigation.navigate("AuthStack", {
+			params: "SignUp",
+		});
 	}
+	const options = [
+		{
+			icons: <Certificate width={26} height={26} />,
+			text: "My Certificates",
+		},
+		{
+			icons: <Ionicons name="settings-outline" size={24} color={"black"} />,
+			text: "Settings",
+			onPress: navigateToSettings,
+		},
+		{
+			icons: <Secure width={26} height={26} />,
+			text: "Security",
+		},
+		{
+			icons: <Resource width={26} height={26} />,
+			text: "Resources",
+			onPress: navigateToResource,
+		},
+	];
 	return (
 		<View style={styles.container}>
 			<View style={styles.topContainer}>
@@ -22,25 +51,23 @@ const Profile = ({navigation}) => {
 				</View>
 				<View style={styles.textContainer}>
 					<Text style={styles.text1}>Samuel Luwaiz</Text>
-					<Text style={styles.text2}>Software Engineer | Backend Developer | Freelancer</Text>
+					<Text style={styles.text2}>
+						Software Engineer | Backend Developer | Freelancer
+					</Text>
 				</View>
 			</View>
 			<View style={styles.bottomContainer}>
-				<Option
-					icons={<Certificate width={26} height={26} fill={"black"} />}
-					text={"My Certificates"}
-				/>
-				<Option
-					icons={<Ionicons name="settings-outline" size={24} color={"black"} />}
-					text={"Settings"}
-					onPress={navigateToSettings}
-
-				/>
-				<Option icons={<Secure width={26} height={26} />} text={"Security"} />
-				<Option
-					icons={<Resource width={26} height={26} />}
-					text={"Resources"}
-				/>
+				{options.map((item, index) => (
+					<Option
+						key={index}
+						icons={item.icons}
+						text={item.text}
+						onPress={item.onPress ? item.onPress : null}
+					/>
+				))}
+				<View style={styles.button}> 
+					<BlueButton onPress={LogOut} title={"Log out"} />
+				</View>
 			</View>
 		</View>
 	);

@@ -9,6 +9,9 @@ export const styles = StyleSheet.create({
 		borderRadius: 5,
 		borderWidth: 1,
 		borderColor: colors.Grey1,
+		flexDirection:"row",
+		alignItems: "center",
+		justifyContent: "space-between",
 	},
 	text: { color: colors.TextGrey1 },
 });

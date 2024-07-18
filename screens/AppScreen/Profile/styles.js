@@ -37,5 +37,8 @@ export const styles = StyleSheet.create({
         fontSize:14,
         color: colors.TextGrey1,
         textAlign: "center"
+    },
+    button:{
+        marginTop: 20,
     }
 })

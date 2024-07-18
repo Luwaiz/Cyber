@@ -1,24 +1,15 @@
 import {
-	Dimensions,
 	Image,
 	StatusBar,
 	StyleSheet,
 	Text,
-	TouchableOpacity,
 	View,
 } from "react-native";
-import React, { useEffect, useState } from "react";
-import { Ionicons } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
+import React from "react";
 import { colors } from "../constants/styling";
 import BackButton from "./BackButton";
-const { width, height } = Dimensions.get("screen");
 
 const NavHeader = (props) => {
-	const navigation = useNavigation();
-	const GoBack = () => {
-		navigation.goBack();
-	};
 	return (
 		<View style={styles.overlay}>
 			{props.title === "Dashboard" ? (
@@ -50,7 +41,7 @@ const styles = StyleSheet.create({
 	overlay: {
 		width: "100%",
 		backgroundColor: colors.primaryWhite,
-		paddingTop: StatusBar.currentHeight,
+		paddingTop: StatusBar.currentHeight + 10,
 		flexDirection: "row",
 		alignItems: "center",
 		paddingHorizontal: 20,
