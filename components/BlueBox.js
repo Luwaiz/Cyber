@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
 	topic: {
 		color: colors.primaryWhite,
 		fontSize: 16,
-		fontWeight: "bold",
+		fontFamily: "Inter-Bold",
 	},
 	lowerContainer: {
 		flexDirection: "row",

@@ -4,13 +4,15 @@ import { AntDesign } from "@expo/vector-icons";
 import { colors } from "../constants/styling";
 import { useNavigation } from "@react-navigation/native";
 
-const Option = ({text,icons,onPress}) => {
-
+const Option = ({ text, icons, onPress }) => {
 	return (
-		<TouchableOpacity onPress={onPress} activeOpacity={0.5} style={styles.container}>
-			<View style={styles.icon}>
-                {icons}
-            </View>
+		<TouchableOpacity
+			onPress={onPress}
+			activeOpacity={0.5}
+			style={styles.container}
+		>
+			{icons ? <View style={styles.icon}>{icons}</View> : null}
+
 			<View style={styles.leftContainer}>
 				<Text style={styles.text}>{text}</Text>
 				<AntDesign name="right" size={20} color={colors.TextGrey1} />
@@ -45,9 +47,8 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 		marginRight: 10,
 	},
-    text: {
-        color: colors.TextGrey1,
-        fontSize: 16,
-    },
-    
+	text: {
+		color: colors.TextGrey1,
+		fontSize: 16,
+	},
 });

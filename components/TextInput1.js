@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
 	},
 	text:{
 		fontSize: 14,
-		fontWeight: "ultralight",
+		fontFamily: "Inter-Regular",
 	},
 	focus:{
 		borderColor:colors.primaryBlue,

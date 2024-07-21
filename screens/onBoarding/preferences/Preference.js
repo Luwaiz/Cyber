@@ -66,7 +66,7 @@ const Preferences = ({ navigation }) => {
 				renderItem={({ item, index }) => (
 					<View style={styles.contain}>
 						<View style={styles.headText}>
-							<Text style={styles.subTitle}>{item.title}</Text>
+							<Text style={styles.Title}>{item.title}</Text>
 						</View>
                         {currentIndex === 0 && <Interest/>}
                         {currentIndex === 1 && <Scheme/>}

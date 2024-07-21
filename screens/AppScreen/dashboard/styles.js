@@ -18,9 +18,10 @@ export const styles = StyleSheet.create({
         alignItems: 'center'
     },
     sectionTitle:{
-        fontSize: 18,
-        fontWeight: 'bold',
         marginBottom: 20,
-        marginLeft:20
+        marginLeft:20,
+        fontSize: 18,
+        fontFamily: "Inter-Bold",
+
     }
 })

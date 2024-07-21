@@ -26,7 +26,8 @@ const styles = StyleSheet.create({
 	},
 	buttonText: {
 		fontSize: 16,
-		fontWeight: "500",
-        color: colors.primaryWhite
+        color: colors.primaryWhite,
+		fontFamily: "Inter-Medium",
+
 	},
 });

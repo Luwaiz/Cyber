@@ -1,10 +1,4 @@
-import {
-	Image,
-	StatusBar,
-	StyleSheet,
-	Text,
-	View,
-} from "react-native";
+import { Image, StatusBar, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { colors } from "../constants/styling";
 import BackButton from "./BackButton";
@@ -41,17 +35,17 @@ const styles = StyleSheet.create({
 	overlay: {
 		width: "100%",
 		backgroundColor: colors.primaryWhite,
-		paddingTop: StatusBar.currentHeight + 10,
+		paddingTop: StatusBar.currentHeight ,
 		flexDirection: "row",
 		alignItems: "center",
 		paddingHorizontal: 20,
 	},
 	title: {
-		fontWeight: "bold",
+		fontFamily: "Inter-Bold",
 	},
 	welcome: {
 		fontSize: 18,
-		fontWeight: "thin",
+		fontFamily: "Inter-Regular",
 	},
 	picture: {
 		width: 40,

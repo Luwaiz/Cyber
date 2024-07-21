@@ -1,12 +1,17 @@
-import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
+import React from "react";
+import { Dimensions, Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 const { width, height } = Dimensions.get("screen");
-
-import React from "react";
 import { colors } from "../constants/styling";
+import { useNavigation } from "@react-navigation/native";
 
 const Suggestions = ({ item, index }) => {
+	
+	const navigation = useNavigation()
+	const goToDetails = () => {
+        navigation.navigate("Course Detail", { item })
+    }
 	const Loop = () => {
 		let icons = [];
 		for (let i = 0; i < 5; i++) {
@@ -16,8 +21,9 @@ const Suggestions = ({ item, index }) => {
 		}
 		return icons;
 	};
+
 	return (
-		<View key={index} style={styles.section}>
+		<Pressable onPress={goToDetails} key={index} style={styles.section}>
 			<Image
 				source={require("../assets/images/phonePic.jpg")}
 				resizeMode="cover"
@@ -28,7 +34,7 @@ const Suggestions = ({ item, index }) => {
 				<Text style={styles.subText}>Irolem ipsum</Text>
 				<View style={styles.ratingContainer}>{Loop()}</View>
 			</View>
-		</View>
+		</Pressable>
 	);
 };
 
@@ -55,14 +61,14 @@ const styles = StyleSheet.create({
 	},
 	text: {
 		fontSize: 16,
-		fontWeight: "bold",
 		color: colors.TextGrey1,
+        fontFamily: "Inter-Bold",
 	},
 	subText: {
 		fontSize: 14,
-		fontWeight: "400",
 		color: colors.Grey3,
 		marginTop: 3,
+        fontFamily: "Inter-Regular",
 	},
 	ratingContainer: {
 		flexDirection: "row",

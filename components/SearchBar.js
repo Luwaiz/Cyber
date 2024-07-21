@@ -7,7 +7,6 @@ import {
 	View,
 } from "react-native";
 import React, { useState } from "react";
-import { FontAwesome } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 import { colors } from "../constants/styling";
 const { width, height } = Dimensions.get("screen");

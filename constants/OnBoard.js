@@ -17,4 +17,5 @@ export const interest = [
 	{ topic: "Security operation center(SOC)" },
 	{ topic: "Identity and access management" },
 	{ topic: "Industrial control system security" },
+	{ topic: "Block chain" },
 ];
