@@ -15,6 +15,9 @@ const Profile = ({ navigation }) => {
 	const navigateToResource = () => {
 		navigation.navigate("Resources");
 	};
+	const navigateToCertifications = () => {
+		navigation.navigate("Certifications");
+	};
 	const LogOut = () => {
 		navigation.navigate("AuthStack", {
 			params: "SignUp",
@@ -24,6 +27,7 @@ const Profile = ({ navigation }) => {
 		{
 			icons: <Certificate width={26} height={26} />,
 			text: "My Certificates",
+			onPress: navigateToCertifications
 		},
 		{
 			icons: <Ionicons name="settings-outline" size={24} color={"black"} />,

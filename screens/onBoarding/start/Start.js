@@ -22,6 +22,11 @@ const Start = ({ navigation }) => {
 	const ToPreference = () => {
 		navigation.navigate("Preferences");
 	};
+	const ToLogin = () => {
+		navigation.navigate("AuthStack", {
+			screen: "Log In",
+		});
+	};
 
 	const moveCircle = () => {
 		if (HEIGHT.value === height && WIDTH.value === width) {
@@ -47,13 +52,13 @@ const Start = ({ navigation }) => {
 	return (
 		<SafeAreaView style={styles.container}>
 			<View style={styles.circleContainer}>
-				<Animated.View style={[styles.Circle, animatedStyle]} >
+				<Animated.View style={[styles.Circle, animatedStyle]}>
 					<Text style={styles.cybus}>Cybus</Text>
 				</Animated.View>
 			</View>
 			<View style={styles.button}>
 				<BlueButton title={"Get Started"} onPress={ToPreference} />
-				<WhiteButton title={"Already have an account"} />
+				<WhiteButton title={"Already have an account"} onPress={ToLogin} />
 			</View>
 		</SafeAreaView>
 	);

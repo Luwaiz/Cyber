@@ -1,7 +1,6 @@
 import {
 	Image,
 	ScrollView,
-	StyleSheet,
 	Text,
 	TouchableOpacity,
 	View,
@@ -9,12 +8,15 @@ import {
 import React, { useState } from "react";
 import { styles } from "./styles";
 import BlueButton from "../../../components/BlueButton";
-import ResourceCards from "../../../components/ResourceCards";
 import Option from "../../../components/Option";
 
-const CourseDetails = ({ route }) => {
+const CourseDetails = ({ route,navigation }) => {
 	const { item } = route.params;
 	const [expanded, setExpanded] = useState(false);
+
+	const goToLesson = ()=>{
+		navigation.navigate("Lesson",{item})
+	}
 	const toggleExpanded = () => {
 		setExpanded(!expanded);
 	};
@@ -40,7 +42,7 @@ const CourseDetails = ({ route }) => {
 						style={styles.image}
 					/>
 					<View style={styles.button}>
-						<BlueButton title="Enroll" />
+						<BlueButton title="Enroll" onPress={goToLesson}/>
 					</View>
 				</View>
 				<View style={styles.bottomContainer}>
@@ -75,7 +77,7 @@ const CourseDetails = ({ route }) => {
 						))}
 					</View>
 					<View style={styles.button}>
-						<BlueButton title="Enroll" />
+						<BlueButton title="Enroll" onPress={goToLesson}/>
 					</View>
 				</View>
 			</ScrollView>

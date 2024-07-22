@@ -19,8 +19,8 @@ const Resources = () => {
 				showsVerticalScrollIndicator={false}
 				contentContainerStyle={styles.cards}
 			>
-				{topics.map(({ topic, index }) => (
-					<ResourceCards text={topic} key={index} />
+				{topics.map((topic, index) => (
+					<ResourceCards text={topic.topic} key={index} />
 				))}
 			</ScrollView>
 		</View>

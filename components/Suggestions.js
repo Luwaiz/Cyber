@@ -16,7 +16,7 @@ const Suggestions = ({ item, index }) => {
 		let icons = [];
 		for (let i = 0; i < 5; i++) {
 			icons.push(
-				<Entypo name="star" size={18} color={colors.primaryBlue} key={i} />
+				<Entypo name="star" size={18} color={colors.primaryBlue} key={i} /> 
 			);
 		}
 		return icons;

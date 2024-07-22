@@ -2,7 +2,6 @@ import { Dimensions, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { AntDesign } from "@expo/vector-icons";
 import { colors } from "../constants/styling";
-const { width, height } = Dimensions.get("screen");
 
 const ResourceCards = ({ text }) => {
 	// TODO: Implement ResourceCards component to display resources in a grid layout
@@ -16,7 +15,7 @@ const ResourceCards = ({ text }) => {
 			<Text style={styles.HeadText}>{text}</Text>
 			<View style={styles.optionContainer}>
 				{options.map((option, index) => (
-					<View style={styles.option}>
+					<View style={styles.option} key={index}>
 						<Text style={styles.optionText}>{option.name}</Text>
 						<AntDesign name="right" size={20} color={colors.TextGrey1} />
 					</View>
