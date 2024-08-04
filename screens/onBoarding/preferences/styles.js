@@ -7,25 +7,17 @@ export const styles = StyleSheet.create({
 		flex: 1,
 		backgroundColor: colors.primaryWhite,
 	},
-
 	contain: {
 		flex: 1,
 		width: width,
 		paddingTop: 20,
 	},
-	title: {
-		fontSize: 24,
-		textAlign: "center",
-		marginBottom: 30,
-		// fontFamily:"Albert-SemiBold"
-	},
-	subTitle: {
+	Title: {
 		fontSize: 20,
-		flexWrap: "wrap",
-		fontWeight: "bold",
-		// fontFamily:"AlbertSans-ExtraBold"
+		fontFamily: "Inter-Bold",
 	},
 	headText: {
-		paddingHorizontal:30
+		paddingHorizontal:24
 	},
+	
 });

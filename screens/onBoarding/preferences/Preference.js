@@ -15,6 +15,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { styles } from "./styles";
 import Interest from "../interest/Interest";
 import Scheme from "../scheme/Scheme";
+import Knowledged from "../knowledge/Knowledged";
+import Schedule from "../schedule/Schedule";
 const { width, height } = Dimensions.get("screen");
 
 const Preferences = ({ navigation }) => {
@@ -62,14 +64,17 @@ const Preferences = ({ navigation }) => {
 				onMomentumScrollEnd={scrollFunction}
 				pagingEnabled
 				showsHorizontalScrollIndicator={false}
-				scrollEnabled={false}
+				// scrollEnabled={false}
 				renderItem={({ item, index }) => (
 					<View style={styles.contain}>
 						<View style={styles.headText}>
-							<Text style={styles.subTitle}>{item.title}</Text>
+							<Text style={styles.Title}>{item.title}</Text>
 						</View>
                         {currentIndex === 0 && <Interest/>}
                         {currentIndex === 1 && <Scheme/>}
+						{currentIndex === 2 && <Knowledged/>}
+						{currentIndex === 3 && <Schedule/>}
+
 					</View>
 				)}
 			/>

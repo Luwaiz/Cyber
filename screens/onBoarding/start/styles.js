@@ -4,7 +4,8 @@ import { colors } from "../../../constants/styling";
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: colors.primaryWhite
+        backgroundColor: colors.primaryWhite,
+        
     },
     title: {
         fontSize: 24,
@@ -16,6 +17,8 @@ export const styles = StyleSheet.create({
         alignSelf: 'center',
         top:"auto",
         bottom:"auto",
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     circleContainer :{
         ...StyleSheet.absoluteFillObject,
@@ -27,5 +30,10 @@ export const styles = StyleSheet.create({
         borderRadius: 5,
         marginTop: "auto",
         marginBottom:30
+    },
+    cybus:{
+        fontSize:46,
+        color:colors.primaryWhite,
+        fontFamily:'Teko-Bold'
     }
 })

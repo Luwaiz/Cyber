@@ -4,7 +4,7 @@ import { colors } from "../../../constants/styling";
 export const styles = StyleSheet.create({
 	item: {
 		padding: 10,
-		marginVertical: 8,
+		marginVertical: 6,
 		marginHorizontal: 16,
 		borderRadius: 5,
 		borderWidth: 1,
@@ -13,12 +13,16 @@ export const styles = StyleSheet.create({
         alignItems: "center",
 	},
 	text: { 
-        color: colors.TextGrey1 
+        color: colors.TextGrey1 ,
+		fontSize: 16,
+		fontFamily: "Inter-Regular",
     },
 	subTitle: {
 		color: colors.primaryBlack,
-		marginHorizontal: 30,
-        marginTop: 20,
+		marginHorizontal: 24,
+        marginTop: 16,
         marginBottom: 30,
+		fontSize: 16,
+		fontFamily: "Inter-Regular",
 	},
 });

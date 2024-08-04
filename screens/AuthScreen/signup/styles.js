@@ -7,22 +7,30 @@ export const styles = StyleSheet.create({
         backgroundColor: colors.primaryWhite,
     },
     title: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        
+        fontSize: 20,
+		fontFamily: "Inter-Bold",
     },
     headerContainer:{
         marginTop: 20,
-        marginBottom: 20,
-        marginHorizontal:30,
+        marginBottom: 60,
+        marginHorizontal:24,
     },
     subTitle: {
         fontWeight: 'regular',
-        marginTop: 10,
-        fontSize: 16,
+        marginTop: 20,
+        fontSize: 14,
+		fontFamily: "Inter-Regular",
     },
     LoginText:{
         fontWeight: "800",
-        color:colors.primaryBlue
+        color:colors.primaryBlue,
+		fontFamily: "Inter-ExtraBold",
+    },
+    input:{
+        paddingHorizontal: 20,
+    },
+    button:{
+        paddingHorizontal: 20,
+        marginTop:50
     }
 })
