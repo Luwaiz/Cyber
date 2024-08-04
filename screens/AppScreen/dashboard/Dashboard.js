@@ -21,16 +21,17 @@ const Dashboard = () => {
 
 	return (
 		<SafeAreaView style={styles.container}>
-			<ScrollView  showsVerticalScrollIndicator={false}>
-			<Text style={styles.sectionTitle}>My courses</Text>
+			<ScrollView showsVerticalScrollIndicator={false}>
+				<Text style={styles.sectionTitle}>My courses</Text>
 				<ScrollView
 					horizontal
 					contentContainerStyle={styles.horizontal}
 					showsHorizontalScrollIndicator={false}
 				>
-					<BlueBox />
-					<BlueBox />
-					<BlueBox />
+					{interest.map((item, index) => (
+						<BlueBox key={index} text={item.topic} />
+					))}
+
 				</ScrollView>
 				<Text style={styles.sectionTitle}>Suggested courses</Text>
 				<View style={styles.vertical}>

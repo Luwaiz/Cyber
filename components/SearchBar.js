@@ -24,7 +24,6 @@ const SearchBar = ({Search,setSearch,RunSearch}) => {
 					placeholder="search"
 					value={Search}
 					cursorColor={colors.primaryBlack}
-					onChangeText={(text) => setSearch(text)}
                     placeholderTextColor={colors.Grey3}
 				/>
 			</View>

@@ -24,11 +24,11 @@ const Suggestions = ({ item, index }) => {
 
 	return (
 		<Pressable onPress={goToDetails} key={index} style={styles.section}>
-			<Image
-				source={require("../assets/images/phonePic.jpg")}
-				resizeMode="cover"
+			<View
 				style={styles.image}
-			/>
+			>
+				{item?.image}
+			</View>
 			<View style={styles.infoContainer}>
 				<Text style={styles.text}>{item?.topic}</Text>
 				<Text style={styles.subText}>Irolem ipsum</Text>
@@ -48,8 +48,9 @@ const styles = StyleSheet.create({
 		borderColor: "#ddd",
 		borderRadius: 5,
 		width: width - 30,
-		height: 130,
+		height: 117,
 		flexDirection: "row",
+		overflow:"hidden"
 	},
 	image: {
 		width: "40%",

@@ -4,12 +4,11 @@ import { colors } from "../constants/styling";
 import { ProgressBar } from "react-native-paper";
 import * as Progress from "react-native-progress";
 
-const BlueBox = () => {
+const BlueBox = ({text}) => {
 	const [tracker, setTracker] = useState(78);
-	const track = () => {};
 	return (
 		<View style={styles.container}>
-			<Text style={styles.topic}>Network Security</Text>
+			<Text style={styles.topic}>{text}</Text>
 			<View style={styles.lowerContainer}>
 				<Progress.Bar
 					progress={tracker / 100}

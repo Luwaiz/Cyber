@@ -4,15 +4,10 @@ import { AntDesign } from "@expo/vector-icons";
 import { colors } from "../constants/styling";
 import { RadioButton } from "react-native-paper";
 
-const QuizCard = ({ question, questionNumber }) => {
+const QuizCard = ({ question, questionNumber ,option}) => {
 	// TODO: Implement ResourceCards component to display resources in a grid layout
 	const [selected, setSelected] = useState();
-	const options = [
-		{ id: 1, answer: "Glossary" },
-		{ id: 2, answer: "Links" },
-		{ id: 3, answer: "Downloadable content" },
-		{ id: 4, answer: "content" },
-	];
+
 	return (
 		<View style={styles.container}>
 			<Text style={styles.HeadText}>
@@ -20,11 +15,11 @@ const QuizCard = ({ question, questionNumber }) => {
 				<Text style={styles.optionText}> {question}</Text>
 			</Text>
 			<View>
-				{options.map((option, index) => (
+				{option.map((option, index) => (
 					<View style={styles.option} key={index}>
 						<View style={styles.left}>
-							<Text style={styles.optionText}>{option.id}. </Text>
-							<Text style={styles.optionText}>{option.answer}</Text>
+							<Text style={styles.optionText}>{option?.id}. </Text>
+							<Text style={styles.optionText}>{option?.option}</Text>
 						</View>
 						<RadioButton
 							value={option.id}
@@ -66,6 +61,5 @@ const styles = StyleSheet.create({
 	},
 	left: {
 		flexDirection: "row",
-		alignItems: "center",
 	},
 });

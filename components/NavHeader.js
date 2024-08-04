@@ -2,6 +2,7 @@ import { Image, StatusBar, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { colors } from "../constants/styling";
 import BackButton from "./BackButton";
+import Profile from "../assets/svg/profile.svg";
 
 const NavHeader = (props) => {
 	return (

@@ -1,22 +1,17 @@
-import {
-	Image,
-	ScrollView,
-	Text,
-	TouchableOpacity,
-	View,
-} from "react-native";
+import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import React, { useState } from "react";
 import { styles } from "./styles";
 import BlueButton from "../../../components/BlueButton";
 import Option from "../../../components/Option";
+import { Imagery } from "../../../constants/OnBoard";
 
-const CourseDetails = ({ route,navigation }) => {
+const CourseDetails = ({ route, navigation }) => {
 	const { item } = route.params;
 	const [expanded, setExpanded] = useState(false);
-
-	const goToLesson = ()=>{
-		navigation.navigate("Lesson",{item})
-	}
+	console.log(item?.topic);
+	const goToLesson = () => {
+		navigation.navigate("Lesson", { item });
+	};
 	const toggleExpanded = () => {
 		setExpanded(!expanded);
 	};
@@ -36,13 +31,9 @@ const CourseDetails = ({ route,navigation }) => {
 			<ScrollView showsVerticalScrollIndicator={false} bounces={false}>
 				<View style={styles.topContainer}>
 					<Text style={styles.title}>{item?.topic}</Text>
-					<Image
-						source={require("../../../assets/images/phonePic.jpg")}
-						resizeMode="cover"
-						style={styles.image}
-					/>
+					<View>{item?.image}</View>
 					<View style={styles.button}>
-						<BlueButton title="Enroll" onPress={goToLesson}/>
+						<BlueButton title="Enroll" onPress={goToLesson} />
 					</View>
 				</View>
 				<View style={styles.bottomContainer}>
@@ -77,7 +68,7 @@ const CourseDetails = ({ route,navigation }) => {
 						))}
 					</View>
 					<View style={styles.button}>
-						<BlueButton title="Enroll" onPress={goToLesson}/>
+						<BlueButton title="Enroll" onPress={goToLesson} />
 					</View>
 				</View>
 			</ScrollView>

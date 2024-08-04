@@ -1,3 +1,8 @@
+import ApplicationSec from "../assets/svg/applicationSec.svg";
+import EndPoint from "../assets/svg/endpoint.svg";
+import Cloud from "../assets/svg/Cloud.svg";
+import Network from "../assets/svg/networkSec.svg";
+
 export const Preference = [
 	{ number: 1, title: "Please pick a topic of interest" },
 	{ number: 2, title: "Network security" },
@@ -6,16 +11,11 @@ export const Preference = [
 ];
 
 export const interest = [
-	{ topic: "Network security" },
-	{ topic: "Application security" },
-	{ topic: "Endpoint security" },
-	{ topic: "Cloud security" },
-	{ topic: "Cryptography" },
-	{ topic: "Incident Response" },
-	{ topic: "Ethical hacking" },
-	{ topic: "Cyber threat intelligence" },
-	{ topic: "Security operation center(SOC)" },
-	{ topic: "Identity and access management" },
-	{ topic: "Industrial control system security" },
-	{ topic: "Block chain" },
+	{ topic: "Block chain", image: <EndPoint /> },
+	{ topic: "Network security", image: <Network /> },
+	{ topic: "Application security", image: <ApplicationSec /> },
+	{ topic: "Endpoint security", image: <EndPoint /> },
+	{ topic: "Cloud security", image: <Cloud/> },
+	{ topic: "Industrial control system security", image: <Network /> },
 ];
+

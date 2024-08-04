@@ -68,7 +68,7 @@ const HomeTab = () => {
 					),
 				}}
 			/>
-			<Tab.Screen
+			{/* <Tab.Screen
 				name="Progress"
 				component={Progress}
 				options={{
@@ -76,7 +76,7 @@ const HomeTab = () => {
 						<View>{focused ? <ProgressBlack /> : <ProgressBlack />}</View>
 					),
 				}}
-			/>
+			/> */}
 			<Tab.Screen
 				name="Settings"
 				component={Settings}
