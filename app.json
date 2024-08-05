@@ -4,10 +4,10 @@
     "slug": "CyberSecure",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/AppIcon.png",
+    "icon": "./assets/images/AppIcon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/AppIcon.png",
+      "image": "./assets/images/AppIcon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
