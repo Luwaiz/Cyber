@@ -8,8 +8,9 @@ export const styles = StyleSheet.create({
 		padding:20
     },
 	title: {
-		fontSize: 16,
+		fontSize: 18,
 		fontFamily: "Inter-Bold",
+		marginBottom: 20
 	},
     image: {
 		width: 350,

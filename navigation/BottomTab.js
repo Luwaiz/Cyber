@@ -5,7 +5,6 @@ import { Ionicons } from "@expo/vector-icons";
 import { colors } from "../constants/styling";
 import Dashboard from "../screens/AppScreen/dashboard/Dashboard";
 import Courses from "../screens/AppScreen/courses/Courses";
-import Progress from "../screens/AppScreen/progress/Progress";
 import Settings from "../screens/AppScreen/settings/Settings";
 import Profile from "../screens/AppScreen/Profile/Profile";
 import Board from "../assets/svg/dashboard.svg";
@@ -13,7 +12,6 @@ import BoardBlack from "../assets/svg/dashboard_black.svg";
 import PersonBlack from "../assets/svg/person.svg";
 import Person from "../assets/svg/person_black.svg";
 import BookBlack from "../assets/svg/book.svg";
-import ProgressBlack from "../assets/svg/progress.svg";
 import Book from "../assets/svg/book_black.svg";
 import NavHeader from "../components/NavHeader";
 

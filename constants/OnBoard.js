@@ -13,9 +13,6 @@ export const Preference = [
 export const interest = [
 	{ topic: "Block chain", image: <EndPoint /> },
 	{ topic: "Network security", image: <Network /> },
-	{ topic: "Application security", image: <ApplicationSec /> },
-	{ topic: "Endpoint security", image: <EndPoint /> },
-	{ topic: "Cloud security", image: <Cloud/> },
-	{ topic: "Industrial control system security", image: <Network /> },
+	{ topic: "Internet of Things", image: <ApplicationSec /> },
 ];
 

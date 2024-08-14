@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { styles } from "./styles";
 import BlueButton from "../../../components/BlueButton";
 import Option from "../../../components/Option";
-import { Imagery } from "../../../constants/OnBoard";
 
 const CourseDetails = ({ route, navigation }) => {
 	const { item } = route.params;
@@ -18,6 +17,7 @@ const CourseDetails = ({ route, navigation }) => {
 	const options = [
 		{
 			text: "Course outline",
+			onPress: () => navigation.navigate("Course Outline"),
 		},
 		{
 			text: "Objectives",
@@ -40,16 +40,16 @@ const CourseDetails = ({ route, navigation }) => {
 					<Text style={styles.title}>Course description</Text>
 					<View style={styles.textContainer}>
 						<Text
-							numberOfLines={expanded ? undefined : 3}
+							numberOfLines={expanded ? undefined : 5}
 							style={styles.descriptionText}
 						>
-							"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-							enim ad minim veniam, quis nostrud exercitation ullamco laboris
-							nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-							reprehenderit in voluptate velit esse cillum dolore eu fugiat
-							nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-							sunt in culpa qui officia deserunt mollit anim id est laborum
+							This course provides an in-depth understanding of blockchain
+							technology and its applications in cybersecurity. Students will
+							explore the fundamentals of blockchain, cryptographic principles,
+							smart contracts, and the implementation of blockchain in securing
+							digital transactions and data. Through hands-on lab exercises,
+							students will gain practical experience in working with blockchain
+							technology.
 						</Text>
 						<TouchableOpacity activeOpacity={0.8} onPress={toggleExpanded}>
 							<Text style={styles.Read}>

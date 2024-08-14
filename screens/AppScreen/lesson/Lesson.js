@@ -14,6 +14,19 @@ const Lesson = ({route, navigation }) => {
 		navigation.navigate("Quiz");
 	};
 	const options = [
+
+		{
+			text: "Module 1",
+			onPress: ()=>navigation.navigate("Module1"),
+		},
+		{
+			text: "Module 2",
+			onPress: ()=>navigation.navigate("Module2"),
+		},
+		{
+			text: "Module 3",
+			onPress: ()=>navigation.navigate("Module3"),
+		},
 		{
 			text: "Resources",
 			onPress: navigateToResource,
@@ -29,8 +42,7 @@ const Lesson = ({route, navigation }) => {
 			{item?.image}
 			</View>
 			<View style={styles.bottomContainer}>
-				<Text style={styles.title}>Transcript</Text>
-				<Transcript />
+				<Text style={styles.title}>Study Materials</Text>
 				<View style={styles.options}>
 					{options.map((item, index) => (
 						<Option
