@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { colors } from '../constants/styling';
 
 const Module3 = () => {
   return (
@@ -268,22 +269,30 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor:"white"
+    backgroundColor: 'white',
   },
   heading: {
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 10,
+    color:colors.primaryBlue
   },
   subHeading: {
     fontSize: 16,
     fontWeight: '600',
     marginVertical: 8,
+    borderBottomColor:colors.primaryBlue,
+    borderTopColor:colors.primaryBlue,
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    paddingVertical: 8,
+    textAlign: 'center'
   },
   paragraph: {
     fontSize: 14,
-    lineHeight: 20,
-    marginBottom: 10,
+    lineHeight: 30,
+    marginBottom: 20,
+    
   },
 });
 

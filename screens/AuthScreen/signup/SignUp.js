@@ -6,6 +6,7 @@ import { styles } from "./styles";
 import TextInputBox from "../../../components/TextinputBox";
 import { colors } from "../../../constants/styling";
 import { SafeAreaView } from "react-native-safe-area-context";
+import BlueButton from "../../../components/BlueButton";
 
 const SignUp = ({ navigation }) => {
 	const navigateToHome = () => {
@@ -45,16 +46,8 @@ const SignUp = ({ navigation }) => {
 
 			{/* button */}
 			<View style={{ bottom: 30, position: "absolute" }}>
-				<LinearGradient
-					colors={[colors.primaryBlue, colors.secondaryBlue]}
-					start={{ x: 0.2, y: 0.5 }}
-					end={{ x: 1, y: 1 }}
-					style={{ borderRadius: 30 }}
-				>
-					<TouchableOpacity style={styles.button} onPress={navigateToHome}>
-						<Text style={{ color: "white" }}>Sign up</Text>
-					</TouchableOpacity>
-				</LinearGradient>
+			<BlueButton title={"Sign Up"} onPress={navigateToHome}/>
+
 			</View>
 			{/* Circle design at the bottom */}
 			<View style={styles.bigCircle2} />
