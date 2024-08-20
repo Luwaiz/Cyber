@@ -1,6 +1,5 @@
 import ApplicationSec from "../assets/svg/applicationSec.svg";
 import EndPoint from "../assets/svg/endpoint.svg";
-import Cloud from "../assets/svg/Cloud.svg";
 import Network from "../assets/svg/networkSec.svg";
 
 export const Preference = [
@@ -11,8 +10,8 @@ export const Preference = [
 ];
 
 export const interest = [
-	{ topic: "Block chain", image: <EndPoint /> },
-	{ topic: "Network security", image: <Network /> },
-	{ topic: "Internet of Things", image: <ApplicationSec /> },
+	{ topic: "Block chain",rate:20, image: <EndPoint /> },
+	{ topic: "Network security",rate:78, image: <Network /> },
+	{ topic: "Internet of Things",rate:50, image: <ApplicationSec /> },
 ];
 

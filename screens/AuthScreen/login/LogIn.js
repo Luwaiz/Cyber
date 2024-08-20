@@ -1,36 +1,68 @@
-import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
-import TextInput1 from '../../../components/TextInput1';
-import BlueButton from '../../../components/BlueButton';
-import { styles } from './styles';
+import { Text, View, TouchableOpacity, KeyboardAvoidingView, Platform } from "react-native";
+import React, { useContext, useEffect, useState } from "react";
 
-const LogIn = ({navigation}) => {
-  const navigateToHome = () => {
+import { LinearGradient } from "expo-linear-gradient";
+import { styles } from "./styles";
+import TextInputBox from "../../../components/TextinputBox";
+import { colors } from "../../../constants/styling";
+import { SafeAreaView } from "react-native-safe-area-context";
+
+const LogIn = ({ navigation }) => {
+	const navigateToHome = () => {
 		navigation.navigate("AppStack", {
 			screen: "Home",
 		});
 	};
+	const navigateToSignUp = () => {
+		navigation.navigate("SignUp");
+	};
 	return (
 		<SafeAreaView style={styles.container}>
-			<View style={styles.headerContainer}>
-				<Text style={styles.title}>Login</Text>
-				<Text style={styles.subTitle}>
-        or if you don’t have an account
-					<TouchableOpacity>
-          <Text style={styles.LoginText}> SignUp</Text>
-          </TouchableOpacity>
+			{/* Circle design at the top */}
+
+			<View style={styles.bigCircle} />
+
+			<View style={{ alignItems: "center" }}>
+				<View style={styles.signup}>
+					<Text style={styles.signupTxt}>LOG IN</Text>
+				</View>
+				<View>
+					<TextInputBox placeholder={"USERNAME"} />
+					<TextInputBox password placeholder={"PASSWORD"} />
+				</View>
+			</View>
+
+			<View style={styles.text}>
+				<Text>Don't have an account?</Text>
+				<Text onPress={navigateToSignUp} style={{ color: colors.primaryBlue }}>
+					Sign up
 				</Text>
 			</View>
-			<View style={styles.input}>
-				<TextInput1 text={"Username"} placeholder={"Enter your last name"} />
-				<TextInput1 text={"Password"} placeholder={"Enter your password"} />
+
+			{/* button */}
+			<View
+				style={{
+					bottom: 30,
+					position: "absolute",
+					width: "100%",
+					alignItems: "center",
+				}}
+			>
+				<LinearGradient
+					colors={[colors.primaryBlue, colors.secondaryBlue]}
+					start={{ x: 0.2, y: 0.5 }}
+					end={{ x: 1, y: 1 }}
+					style={{ borderRadius: 30 }}
+				>
+					<TouchableOpacity style={styles.button} onPress={navigateToHome}>
+						<Text style={{ color: "white" }}>Log in</Text>
+					</TouchableOpacity>
+				</LinearGradient>
 			</View>
-			<View style={styles.button}>
-				<BlueButton title={"Login"} onPress={navigateToHome}/>
-			</View>
+			{/* Circle design at the bottom */}
+			<View style={styles.bigCircle2} />
 		</SafeAreaView>
 	);
-}
+};
 
-export default LogIn
-
+export default LogIn;
