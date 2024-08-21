@@ -9,7 +9,6 @@ import {
 import React, { useState } from "react";
 import { Feather } from "@expo/vector-icons";
 import { colors } from "../constants/styling";
-const { width, height } = Dimensions.get("screen");
 
 const SearchBar = ({Search,setSearch,RunSearch}) => {
 	const [data, setData] = useState([]);
