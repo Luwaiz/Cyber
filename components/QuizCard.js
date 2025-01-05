@@ -1,12 +1,15 @@
 import { StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
-import { AntDesign } from "@expo/vector-icons";
 import { colors } from "../constants/styling";
 import { RadioButton } from "react-native-paper";
 
-const QuizCard = ({ question, questionNumber ,option}) => {
-	// TODO: Implement ResourceCards component to display resources in a grid layout
+const QuizCard = ({ question, questionNumber, options, onAnswer }) => {
 	const [selected, setSelected] = useState();
+
+	const handleSelect = (optionId) => {
+		setSelected(optionId);
+		onAnswer(optionId); // Pass the selected answer to the parent
+	};
 
 	return (
 		<View style={styles.container}>
@@ -15,19 +18,23 @@ const QuizCard = ({ question, questionNumber ,option}) => {
 				<Text style={styles.optionText}> {question}</Text>
 			</Text>
 			<View>
-				{option.map((option, index) => (
+				{options.map((option, index) => (
 					<View style={styles.option} key={index}>
 						<View style={styles.left}>
 							<Text style={styles.optionText}>{option?.id}. </Text>
 							<Text style={styles.optionText}>{option?.option}</Text>
 						</View>
+						<View style={styles.RadioButton}>
+
 						<RadioButton
 							value={option.id}
 							status={selected === option.id ? "checked" : "unchecked"}
-							onPress={() => setSelected(option.id)}
+							onPress={() => handleSelect(option.id)}
 							color={colors.primaryBlue}
 							uncheckedColor={colors.TextGrey1}
+							
 						/>
+						</View>
 					</View>
 				))}
 			</View>
@@ -53,13 +60,17 @@ const styles = StyleSheet.create({
 	optionText: {
 		color: colors.TextGrey1,
 		fontFamily: "Inter-Regular",
+		flexWrap:"wrap",
+		maxWidth: 250,
 	},
 	option: {
 		flexDirection: "row",
-		justifyContent: "space-between",
 		alignItems: "center",
+		maxWidth: "100%",
+		justifyContent: "space-between",
 	},
 	left: {
 		flexDirection: "row",
 	},
+
 });

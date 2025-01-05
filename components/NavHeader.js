@@ -17,7 +17,7 @@ const NavHeader = (props) => {
 						/>
 					</View>
 					<Text style={styles.welcome}>
-						Welcome
+						Welcome Samuel,
 						<Text style={styles.title}> {props.title}</Text>
 					</Text>
 				</View>

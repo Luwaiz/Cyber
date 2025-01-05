@@ -10,7 +10,7 @@ const Suggestions = ({ item, index }) => {
 	
 	const navigation = useNavigation()
 	const goToDetails = () => {
-        navigation.navigate("Course Detail", { item })
+        navigation.navigate("Course Detail", { item,index })
     }
 	const Loop = () => {
 		let icons = [];
@@ -30,8 +30,8 @@ const Suggestions = ({ item, index }) => {
 				{item?.image}
 			</View>
 			<View style={styles.infoContainer}>
-				<Text style={styles.text}>{item?.topic}</Text>
-				<Text style={styles.subText}>Irolem ipsum</Text>
+				<Text style={styles.text}>Chapter {index+1}</Text>
+				<Text style={styles.subText}>{item?.topic}</Text>
 				<View style={styles.ratingContainer}>{Loop()}</View>
 			</View>
 		</Pressable>
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
 	},
 	subText: {
 		fontSize: 14,
-		color: colors.Grey3,
+		color: "black",
 		marginTop: 3,
         fontFamily: "Inter-Regular",
 	},

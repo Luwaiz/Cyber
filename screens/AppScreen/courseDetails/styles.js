@@ -14,6 +14,7 @@ export const styles = StyleSheet.create({
 	title: {
 		fontSize: 16,
 		fontFamily: "Inter-Bold",
+		marginBottom: 10,
 	},
 	image: {
 		width: 350,
@@ -22,7 +23,7 @@ export const styles = StyleSheet.create({
 		borderRadius: 5,
 	},
 	button: {
-		alignSelf: "flex-end",
+		gap:20
 	},
 	textContainer: {
 		paddingHorizontal: 10,

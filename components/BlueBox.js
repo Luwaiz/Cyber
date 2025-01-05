@@ -1,22 +1,27 @@
 import { StyleSheet, Text, View } from "react-native";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { colors } from "../constants/styling";
 import { ProgressBar } from "react-native-paper";
 import * as Progress from "react-native-progress";
+import StageManger from "../middlewares/StageManger";
+const BlueBox = ({ item, index }) => {
+	const visitedCount = StageManger((state) => state.getVisitedModules(index));
 
-const BlueBox = ({item}) => {
 	return (
 		<View style={styles.container}>
 			<Text style={styles.topic}>{item.topic}</Text>
 			<View style={styles.lowerContainer}>
 				<Progress.Bar
-					progress={item.rate / 100}
-					color={colors.secondaryBlue}
+					progress={visitedCount*10/100}
+					color={colors.primaryWhite}
 					style={styles.Progress}
 					borderWidth={0}
-					
 				/>
-				<Text style={styles.topic}>{item.rate}%</Text>
+				<Text
+					onPress={() => console.log("visited counts", visitedCount)}
+					style={styles.topic}
+				>{visitedCount*10 }%
+				</Text>
 			</View>
 		</View>
 	);

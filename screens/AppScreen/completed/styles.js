@@ -18,5 +18,9 @@ export const styles = StyleSheet.create({
 		paddingHorizontal:40,
 		textAlign: "center",
 		marginTop:10
+	},
+	button:{
+		width:"80%",
+		marginTop:50,
 	}
 });
